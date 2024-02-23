@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas Organizadas</title>
+</head>
+<body>
+    <h2>Tareas Organizadas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Sub-Tareas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tareas %}
+            <tr>
+                <td>{{ tarea.nombre }}</td>
+                <td>
+                    <ul>
+                        {% for subtarea in tarea.subtareas %}
+                        <li>{{ subtarea }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
